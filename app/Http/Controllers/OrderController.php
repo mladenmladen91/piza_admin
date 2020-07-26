@@ -77,9 +77,14 @@ class OrderController extends Controller
         
 		$order->total_price = $total;
 		$order->save();
+		
+		try {
+            $order->save();
+            return response()->json(["success" => true, "message" => "Order saved"]);
+        } catch (\Exception $e) {
+            return response()->json(["success" => false, "message" => $e]);
+        }
 
-        
-        return response()->json(["success" => true, "order" => $order]);
     }
 
     /**
