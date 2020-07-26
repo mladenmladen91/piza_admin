@@ -16,6 +16,8 @@ class OrderController extends Controller
         $this->middleware('auth', ['except' => [
             'store'
         ]]);
+		
+		$this->middleware('cors');
     }
 	
 	

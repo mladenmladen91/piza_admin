@@ -36,3 +36,4 @@ Route::get('getAll', 'PizzaController@showPizzas');
 
 //Order routes
 Route::resource('admin/order', 'OrderController');
+
